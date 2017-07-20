@@ -1,1 +1,1 @@
-{{ object.title }} - {{ object.rating }} - {{ track.genres }}
+{{ object.title }} - {{ object.rating }} - {% for genre in object.genres.all %} {{ genre }}, {% endfor %}
