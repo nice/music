@@ -1,41 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Greedy Music</title>
-    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/sandstone/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-
-    <style type="text/css">
-    body {
-        background: #cccccc;
-        font-family: 'Open Sans', sans-serif;
-    }
-    #wrapper {
-        max-width: 600px;
-        margin:25px auto 25px;
-        background: white;
-        border-radius: 5px;
-    }
-    #wrapper .navbar {
-        margin-bottom: 0;
-    }
-    #wrapper .navbar-default li a {
-        color: #ffffff;
-    }
-    #wrapper .list-group a {
-        font-size: 16px;
-        color: #6f4e37 !important;
-    }
-    /*#wrapper .list-group .list-group-item:hover {
-        background: #f8f5f0;
-        cursor: pointer;
-    }*/
-    #wrapper .label-default {
-        color: #555555 !important;
-        background: #cccccc;
-    }
-    </style>
+    <link rel="stylesheet" href="{% static 'app/css/main.css' %}">
 </head>
 <body>
     <div id="wrapper">
@@ -57,5 +27,8 @@
             {% endblock %}
         </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'app/js/main.js' %}"></script>
 </body>
 </html>

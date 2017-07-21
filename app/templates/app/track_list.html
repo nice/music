@@ -19,10 +19,10 @@
     {% endif %}
     <div class="list-group">
         {% for track in object_list %}
-            <div class="list-group-item">
+            <div class="list-group-item track-item">
                 <div class="row">
                     <div class="col-md-8">
-                        <a href="{% url 'app:track-detail' track.pk %}">{{ track.title }}</a>
+                        <a class="track-link" href="{% url 'app:track-detail' track.pk %}">{{ track.title }}</a>
                         {% for genre in track.genres.all %}
                             <span class="label label-default"><small>{{ genre.name }}</small></span>
                         {% endfor %}
