@@ -8,11 +8,15 @@
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
-                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Search Title">
+                <input name="term" type="text" class="form-control" id="exampleInputAmount" placeholder="Search for track title or track genre" value="{% if term %}{{ term }}{% endif %}">
             </div>
         </div>
     </form>
-
+    {% if term %}
+    <p class="well">
+    Found <b>{{ page_obj.paginator.count }}</b> results for the search term: <b>{{ term }}</b>
+    </p>
+    {% endif %}
     <div class="list-group">
         {% for track in object_list %}
             <div class="list-group-item">
@@ -41,7 +45,7 @@
         <ul class="pagination">
             {% if page_obj.has_previous %}
             <li>
-                <a href="{% url 'app:track-list' %}?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                <a href="{% url 'app:track-list' %}?page={{ page_obj.previous_page_number }}{% if term %}&term={{term}}{% endif %}" aria-label="Previous">
                     <span aria-hidden="true">&laquo; Prev.</span>
                 </a>
             </li>
@@ -49,13 +53,13 @@
 
             {% for pi in page_obj.paginator.num_pages|get_loop %}
                 <li {% if page_obj.number == pi %}class="active"{% endif %}>
-                    <a href="{% url 'app:track-list' %}?page={{ pi }}">{{ pi }}</a>
+                    <a href="{% url 'app:track-list' %}?page={{ pi }}{% if term %}&term={{term}}{% endif %}">{{ pi }}</a>
                 </li>
             {% endfor %}
 
             {% if page_obj.has_next %}
             <li>
-                <a href="{% url 'app:track-list' %}?page={{ page_obj.next_page_number }}" aria-label="Next">
+                <a href="{% url 'app:track-list' %}?page={{ page_obj.next_page_number }}{% if term %}&term={{term}}{% endif %}" aria-label="Next">
                     <span aria-hidden="true">Next &raquo;</span>
                 </a>
             </li>

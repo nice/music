@@ -16,6 +16,5 @@ urlpatterns = [
     url(r'^genres/create/$', GenreCreateView.as_view(), name='genre-create'),
     url(r'^genres/(?P<pk>\d+)/update/$', GenreUpdateView.as_view(), name='genre-update'),
 
-
     url(r'^$', RedirectView.as_view(url='/tracks/', permanent=False), name='index'),
 ]
