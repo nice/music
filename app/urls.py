@@ -11,9 +11,9 @@ urlpatterns = [
     url(r'^tracks/create/$', TrackCreateView.as_view(), name='track-create'),
     url(r'^tracks/(?P<pk>\d+)/update/$', TrackUpdateView.as_view(), name='track-update'),
 
-	url(r'^genres/$', GenreListView.as_view(), name='genre-list'),
+    url(r'^genres/$', GenreListView.as_view(), name='genre-list'),
     url(r'^genres/(?P<pk>\d+)/$', GenreDetailView.as_view(), name='genre-detail'),
-	url(r'^genres/create/$', GenreCreateView.as_view(), name='genre-create'),
+    url(r'^genres/create/$', GenreCreateView.as_view(), name='genre-create'),
     url(r'^genres/(?P<pk>\d+)/update/$', GenreUpdateView.as_view(), name='genre-update'),
 
 

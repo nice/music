@@ -1,1 +1,40 @@
-{{ object.title }} - {{ object.rating }} - {% for genre in object.genres.all %} {{ genre }}, {% endfor %}
+{% extends 'app/base.html' %}
+{% load app_extras %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6">
+        <p class="lead">Track details</p>
+    </div>
+    <div class="col-md-6">
+        <a class="btn btn-default pull-right" href="{% url 'app:track-update' object.pk %}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Track</a>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <th>Title</th>
+            <td>{{ object.title }}</td>
+        </tr>
+        <tr>
+            <th>Genres</th>
+            <td>{% for genre in object.genres.all %}
+                    <span class="label label-default">{{ genre }}</span>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <th>Rating</th>
+            <td>{% rating_display_tag object.rating %}</td>
+        </tr>
+        <tr>
+            <th>Last Modified</th>
+            <td>{{ track.date_modified }}</td>
+        </tr>
+
+    </tbody>
+</table>
+
+{% endblock %}

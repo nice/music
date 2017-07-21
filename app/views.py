@@ -37,7 +37,7 @@ class TrackUpdateView(UpdateView):
     fields = ['title', 'rating', 'genres']
 
     def get_success_url(self):
-        return reverse('app:track-list')
+        return reverse('app:track-detail', kwargs={'pk': self.object.pk})
 
 
 class GenreListView(ListView):
@@ -69,4 +69,4 @@ class GenreUpdateView(UpdateView):
     fields = ['name']
 
     def get_success_url(self):
-        return reverse('app:genre-list')
+        return reverse('app:genre-detail', kwargs={'pk': self.object.pk})

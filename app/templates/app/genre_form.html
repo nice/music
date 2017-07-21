@@ -1,4 +1,19 @@
+{% extends 'app/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<h3>Genre</h3> <hr>
+
 <form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save" />
+    <div class="form-group">
+	    <label for="name">Name</label>
+        {% render_field form.name class+="form-control" %}
+        {{ form.name.errors }}
+    </div>
+
+    <button class="btn btn-default" type="submit" value="Submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save</button>
 </form>
+
+<div class="clearfix"><br>
+
+{% endblock %}

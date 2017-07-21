@@ -1,3 +1,19 @@
-{% for genre in object_list %}
-{{ genre.name }}
-{% endfor %}
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+    <h3 align="center">Genres</h3>
+
+    <div class="list-group">
+        {% for genre in object_list %}
+            <a href="{% url 'app:genre-detail' genre.pk %}" class="list-group-item">
+                {{ genre.name }}
+            </a>
+        {% endfor %}
+    </div>
+
+ 	<p class="text-center">
+        <a class="btn btn-default" href="{% url 'app:genre-create' %}" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add New Genre</a>
+    </p>
+
+{% endblock %}

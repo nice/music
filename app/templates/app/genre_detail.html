@@ -1,1 +1,28 @@
-{{ object.name }}
+{% extends 'app/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col-md-6">
+    	<p class="lead">Genre details</p>
+	</div>
+    <div class="col-md-6">
+        <a class="btn btn-default pull-right" href="{% url 'app:genre-update' object.pk %}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Genre</a>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <td>{{ object.name }}</td>
+        </tr>
+        <tr>
+            <th>Last Modified</th>
+            <td>{{ genre.date_modified }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}
