@@ -3,11 +3,11 @@
 
 {% block content %}
 
-<h3>Track</h3> <hr>
+<h3 align="center">Track</h3> <hr>
 <form action="" method="post">{% csrf_token %}
     <div class="form-group">
         <label for="title">Title</label>
-        {% render_field form.title class+="form-control" %}
+        {% render_field form.title class+="form-control" placeholder="Track title" %}
         {{ form.title.errors }}
     </div>
 
@@ -22,8 +22,9 @@
         {% render_field form.genres class+="form-control" %}
         {{ form.genres.errors }}
     </div>
-
-    <button class="btn btn-default" type="submit" value="Submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save</button>
+    <p class="text-center">
+        <button class="btn btn-default" type="submit" value="Submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save</button>
+    </p>
 </form>
 
 <div class="clearfix"><br>

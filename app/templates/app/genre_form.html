@@ -2,16 +2,18 @@
 {% load widget_tweaks %}
 
 {% block content %}
-<h3>Genre</h3> <hr>
+<h3 align="center">Genre</h3> <hr>
 
 <form action="" method="post">{% csrf_token %}
     <div class="form-group">
 	    <label for="name">Name</label>
-        {% render_field form.name class+="form-control" %}
+        {% render_field form.name class+="form-control" placeholder="Gener name" %}
         {{ form.name.errors }}
     </div>
 
-    <button class="btn btn-default" type="submit" value="Submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save</button>
+	<p class="text-center">
+    	<button class="btn btn-default" type="submit" value="Submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save</button>
+	</p>
 </form>
 
 <div class="clearfix"><br>

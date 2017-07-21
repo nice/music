@@ -24,6 +24,9 @@ class Track(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['-date_modified']
+
     def __str__(self):
         return self.title
 
@@ -32,6 +35,9 @@ class Genre(models.Model):
     name = models.CharField(max_length=200, unique=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-date_modified']
 
     def __str__(self):
         return self.name
