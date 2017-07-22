@@ -1,5 +1,5 @@
-Greedy Music App - Interview Task
-=================================
+Greedy Music App
+================
 
 
 ### Screenshots
